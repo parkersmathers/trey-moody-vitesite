@@ -1,0 +1,248 @@
+html,
+body {
+  height: 100%;
+}
+
+html,
+body,
+header,
+footer,
+div,
+ul,
+pre,
+a,
+h1,
+h2,
+h3 {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.1em/1.5 Times;
+  width: 90%;
+  max-width: 1280px;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li h3 {
+  margin: 0.5em 0;
+}
+
+h1,
+h2,
+h3,
+pre,
+a {
+  font-family: monospace;
+  font-size: inherit;
+  font-weight: normal;
+  /* white-space: pre-wrap; */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: maroon;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#page div,
+#page div img {
+  width: 100%;
+}
+
+#page div.box-for-two {
+  display: flex;
+}
+
+#page div.box-for-two div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  transform: rotate(90deg);
+  transform-origin: left top;
+  font-size: 3em;
+}
+
+#bio {
+  margin-right: -3em;
+  z-index: 1;
+}
+
+#bio h3,
+#bio pre {
+  font-size: inherit;
+  padding-top: 1em;
+  padding-right: 0.5em;
+}
+
+#bio h3,
+#publications {
+  background-color: rgb(255, 255, 255);
+}
+
+#photo {
+  margin-top: -1em;
+}
+
+#publications {
+  margin-left: 4em;
+  padding-left: 1em;
+  margin-top: -1em;
+  padding-top: 1em;
+  z-index: 1;
+}
+
+#events {
+  align-self: flex-start;
+  margin-top: 1em;
+  margin-right: -4em;
+  padding: 3em 1em;
+  background-color: rgba(128, 255, 0, 0.5);
+}
+
+#events ul,
+#events h2,
+#events div {
+  visibility: hidden;
+}
+
+#events h2,
+#events div {
+  padding-left: 2em;
+}
+
+#events div a {
+  padding-right: 1em;
+  padding-left: 0.5em;
+  margin: 0.5em 0;
+}
+
+#events a img.logo,
+footer pre a img.logo {
+  width: 1.5em;
+  height: 1.5em;
+  color: inherit;
+}
+
+#events a img.twitter {
+  background-color: black;
+}
+
+#events:hover ul,
+#events:hover h2,
+#events:hover div {
+  visibility: visible;
+}
+
+#page .book-box {
+  width: 80%;
+}
+
+#book {
+  margin-top: -2em;
+  margin-bottom: 1em;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+footer pre {
+  padding: 1em;
+}
+
+footer pre:first-child {
+  margin-left: -1em;
+}
+
+footer pre a {
+  display: flex;
+  line-height: 1;
+  background-color: rgba(128, 255, 0, 0.5);
+}
+
+footer pre a img.instagram {
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%;
+    font-size: 0.9em;
+    padding: 1em;
+  }
+  header h1 {
+    transform: rotate(0deg);
+    transform-origin: left top 0;
+    font-size: 2.5em;
+  }
+  #page div.box-for-two {
+    flex-direction: column;
+  }
+  #page div.box-for-two #events {
+    align-self: flex-end;
+    margin-top: 1em;
+    margin-right: 0;
+    padding: 0.5em 2em;
+    background-color: rgba(128, 255, 0, 0.5);
+  }
+  #events li:first-child,
+  #events div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  #events ul,
+  #events h2,
+  #events div {
+    visibility: visible;
+    padding-left: 0;
+  }
+  #events div a {
+    padding: 1em 0.5em 0;
+  }
+  #photo {
+    margin-top: 1em;
+  }
+  #publications {
+    margin-top: 0;
+    margin-left: 0;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+  }
+  #page .book-box {
+    width: 100%;
+  }
+  #book {
+    margin-top: 0;
+  }
+}
