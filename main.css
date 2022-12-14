@@ -38,7 +38,7 @@ ul {
 }
 
 ul li h3 {
-  margin: 0.5em 0;
+  margin-bottom: 0.5em;
 }
 
 h1,
@@ -55,10 +55,6 @@ a {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-a:hover {
-  color: maroon;
 }
 
 #page {
@@ -86,6 +82,7 @@ header h1 {
   transform: rotate(90deg);
   transform-origin: left top;
   font-size: 3em;
+  position: sticky;
 }
 
 #bio {
@@ -98,6 +95,7 @@ header h1 {
   font-size: inherit;
   padding-top: 1em;
   padding-right: 0.5em;
+  line-height: 1.8em;
 }
 
 #bio h3,
@@ -110,53 +108,70 @@ header h1 {
 }
 
 #publications {
+  margin-top: -1.2em;
   margin-left: 4em;
+  padding-top: 0.8em;
+  padding-bottom: 0.4em;
   padding-left: 1em;
-  margin-top: -1em;
-  padding-top: 1em;
   z-index: 1;
+}
+
+#publications a {
+  padding: 0.3em 0;
+  outline: 0;
+  border-bottom: solid 1px transparent;
+  -webkit-transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+  -ms-transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+  transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+}
+
+#publications a:hover {
+  font-weight: bold;
+  color: rgba(1, 32, 1);
+  border-bottom: solid 1px rgb(128, 255, 0);
 }
 
 #events {
   align-self: flex-start;
   margin-top: 1em;
   margin-right: -4em;
-  padding: 3em 1em;
+  padding: 2em 0 4em;
   background-color: rgba(128, 255, 0, 0.5);
 }
 
-#events ul,
-#events h2,
-#events div {
-  visibility: hidden;
+#events h2 {
+  margin-bottom: 3em;
 }
 
-#events h2,
-#events div {
-  padding-left: 2em;
-}
-
-#events div a {
+#events h2 span {
+  background-color: rgb(255, 255, 255);
+  font-size: 1.7em;
   padding-right: 1em;
-  padding-left: 0.5em;
-  margin: 0.5em 0;
 }
 
-#events a img.logo,
-footer pre a img.logo {
-  width: 1.5em;
-  height: 1.5em;
+#events pre {
+  margin-left: 2em;
+  display: flex;
+}
+
+#events pre a {
+  padding: 1em;
+  margin-right: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#events a img.logo {
+  width: 3em;
+  height: 3em;
   color: inherit;
 }
 
 #events a img.twitter {
   background-color: black;
-}
-
-#events:hover ul,
-#events:hover h2,
-#events:hover div {
-  visibility: visible;
 }
 
 #page .book-box {
@@ -172,7 +187,8 @@ footer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
+  margin-top: 1em;
 }
 
 footer pre {
@@ -184,13 +200,25 @@ footer pre:first-child {
 }
 
 footer pre a {
+  padding: 1em;
   display: flex;
   line-height: 1;
   background-color: rgba(128, 255, 0, 0.5);
 }
 
+footer pre a img.logo {
+  width: 1.5em;
+  height: 1.5em;
+  color: inherit;
+}
+
 footer pre a img.instagram {
   opacity: 0.2;
+}
+
+#year {
+  display: inline-block;
+  min-width: 2em;
 }
 
 @media screen and (max-width: 800px) {
@@ -211,24 +239,20 @@ footer pre a img.instagram {
     align-self: flex-end;
     margin-top: 1em;
     margin-right: 0;
+    font-size: 0.9em;
     padding: 0.5em 2em;
     background-color: rgba(128, 255, 0, 0.5);
   }
-  #events li:first-child,
-  #events div:last-child {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+  #events h2 {
+    margin-bottom: 1em;
   }
-  #events ul,
-  #events h2,
-  #events div {
-    visibility: visible;
-    padding-left: 0;
+  #events pre a {
+    padding: 0.8em;
   }
-  #events div a {
-    padding: 1em 0.5em 0;
+  #events a img.logo {
+    width: 2.5em;
+    height: 2.5em;
+    color: inherit;
   }
   #photo {
     margin-top: 1em;
@@ -237,12 +261,16 @@ footer pre a img.instagram {
     margin-top: 0;
     margin-left: 0;
     padding-bottom: 0.5em;
-    padding-left: 2em;
+    padding-right: 1em;
   }
   #page .book-box {
     width: 100%;
+    padding: 0;
   }
   #book {
     margin-top: 0;
+  }
+  footer {
+    padding-left: 2em;
   }
 }
